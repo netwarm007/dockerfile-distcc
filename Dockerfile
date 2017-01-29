@@ -1,4 +1,4 @@
-FROM tim03/ubuntu
+FROM ubuntu
 MAINTAINER Chen, Wenli <chenwenli@chenwenli.com>
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -qq update \
