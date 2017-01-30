@@ -10,10 +10,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get -qq update \
  && apt-get clean autoclean\
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /root/src
-RUN wget http://github.com/distcc/distcc/archive/3.2.zip \
- && unzip 3.2.zip && rm 3.2.zip \
- && cd distcc-3.2 && ./autogen.sh && ./configure  --sysconfdir=/etc \
+RUN wget http://github.com/distcc/distcc/archive/master.zip \
+ && unzip master.zip && rm master.zip \
+ && cd distcc-master && ./autogen.sh && ./configure  --sysconfdir=/etc \
  && make deb && make install-deb \
- && cd .. && rm -rf distcc-3.2
+ && cd .. && rm -rf distcc-master
 
 ENTRYPOINT /usr/bin/distccd --daemon  --allow=${ALLOW} --verbose --no-detach "$@"
