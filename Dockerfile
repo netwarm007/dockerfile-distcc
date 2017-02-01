@@ -1,11 +1,11 @@
-FROM ubuntu
+FROM tim03/gcc
 MAINTAINER Chen, Wenli <chenwenli@chenwenli.com>
 
 ENV ALLOW 192.168.0.0/16
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get -qq update \
- && apt-get -qqy install wget autoconf gcc make python3 python3-dev libiberty-dev unzip \
- gzip bzip2 rpm fakeroot alien sudo \
+ && apt-get -qqy install python3 python3-dev libiberty-dev unzip \
+ rpm fakeroot alien sudo \
  && apt-get autoremove -y\
  && apt-get clean autoclean\
  && rm -rf /var/lib/apt/lists/*
