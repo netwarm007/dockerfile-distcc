@@ -1,4 +1,4 @@
-FROM tim03/gcc
+FROM tim03/gcc:6.3
 MAINTAINER Chen, Wenli <chenwenli@chenwenli.com>
 
 ENV ALLOW 192.168.0.0/16
